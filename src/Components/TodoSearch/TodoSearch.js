@@ -1,9 +1,10 @@
 import { getValue } from "@testing-library/user-event/dist/utils";
 import React from "react";
+import { TodoContext } from "../TodoContext";
 import './TodoSearch.css'
 
-function TodoSearch({searcherValue, setSearcher}){
-
+function TodoSearch(){
+    const {searcherValue, setSearcher} = React.useContext(TodoContext);
     const onSearchValueChange = (event) => {
         setSearcher(event.target.value);
     };
